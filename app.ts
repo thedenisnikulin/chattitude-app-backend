@@ -15,6 +15,7 @@ import { json, urlencoded } from 'body-parser';
 import cors from 'cors';
 // utils
 import { PORT } from "./config";
+import path from "path";
 
 const app: Application = express();
 const server: Server = new Server(app, db.sequelize, PORT);
@@ -30,6 +31,7 @@ const globalMiddleware: Array<RequestHandler> = [
     urlencoded({ extended: false }),
     json(),
     cors({ credentials: true, origin: true }),
+    express.static(path.join(__dirname, 'build'))
 ];
 
 Promise.resolve()
@@ -38,6 +40,7 @@ Promise.resolve()
         server.loadMiddleware(globalMiddleware);
         server.loadControllers(controllers);
         const httpServer = server.run();
+        server.renderClient();
         const chatServer = new ChatServer(httpServer);
         chatServer.run();
     });

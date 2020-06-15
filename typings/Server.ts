@@ -1,6 +1,7 @@
-import { Application, RequestHandler } from 'express';
+import { Application, RequestHandler, Request, Response } from 'express';
 import { Sequelize } from 'sequelize';
 import http from 'http'
+import path from 'path';
 import Controller from './Controller';
 
 export default class Server {
@@ -32,6 +33,12 @@ export default class Server {
             this.app.use(controller.path, controller.setRoutes());
         });
     };
+
+    public renderClient(): void {
+        this.app.get('/*', (req: Request, res: Response) => {
+            res.sendFile(path.join(__dirname, '../build/', 'index.html'));
+        })
+    }
 
     public async initDatabase(): Promise<void> {
         try {

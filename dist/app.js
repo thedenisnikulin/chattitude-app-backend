@@ -19,6 +19,7 @@ const body_parser_1 = require("body-parser");
 const cors_1 = __importDefault(require("cors"));
 // utils
 const config_1 = require("./config");
+const path_1 = __importDefault(require("path"));
 const app = express_1.default();
 const server = new Server_1.default(app, index_1.default.sequelize, config_1.PORT);
 const controllers = [
@@ -31,6 +32,7 @@ const globalMiddleware = [
     body_parser_1.urlencoded({ extended: false }),
     body_parser_1.json(),
     cors_1.default({ credentials: true, origin: true }),
+    express_1.default.static(path_1.default.join(__dirname, 'build'))
 ];
 Promise.resolve()
     .then(() => server.initDatabase())
@@ -38,6 +40,7 @@ Promise.resolve()
     server.loadMiddleware(globalMiddleware);
     server.loadControllers(controllers);
     const httpServer = server.run();
+    server.renderClient();
     const chatServer = new ChatServer_1.default(httpServer);
     chatServer.run();
 });

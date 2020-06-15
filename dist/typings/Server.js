@@ -8,7 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const path_1 = __importDefault(require("path"));
 class Server {
     constructor(app, database, port) {
         this.app = app;
@@ -35,6 +39,11 @@ class Server {
         });
     }
     ;
+    renderClient() {
+        this.app.get('/*', (req, res) => {
+            res.sendFile(path_1.default.join(__dirname, '../build/', 'index.html'));
+        });
+    }
     initDatabase() {
         return __awaiter(this, void 0, void 0, function* () {
             try {

@@ -1,0 +1,530 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.primary-button {
+    background-color: #74D69D;
+};
+
+.MuiButton-contained {
+    box-shadow: 0;
+}
+
+.loading {
+    text-align: center;
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 16%;
+    text-align: center;
+}
+
+/*----------------home------------------*/
+
+.home {
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 16%;
+    text-align: center;
+}
+
+.big-text-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+.big-text {
+    margin: 0 0.5rem 0 0;
+    color: #4F4F4F
+}
+
+.swiper-container {
+    height: 7rem;
+    overflow: hidden;
+}
+.swiper-wrapper {
+    height: 5rem;
+}
+
+.blue-text {
+    color: #6F85F5;
+}
+.red-text {
+    color: #F56F6F;
+}
+.green-text{
+    color: #58C184;
+}
+
+.home-bottom {
+    margin: 5rem 0 0 0
+}
+
+.app-title {
+    font-size: 35px;
+}
+
+.app-title {
+
+}
+
+.home-buttons {
+    display: table;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5%;
+    text-align: center;
+}
+
+/*----------------auth------------------*/
+.auth-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.auth-title {
+    text-align: center;
+    margin-top: 7rem;
+    margin-bottom: 0;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+.split-rect {
+    background-color: #EDF2F7;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 10rem;
+    width: 20rem
+}
+
+.form-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around
+}
+
+/*----------------dashboard------------------*/
+/*
+    back - B3DEF7
+    search(dark) - AAB6C1
+    text - 2B3036
+    topics & bio - D5DCE3
+    rep number - 8B3DD4
+*/
+
+.background-main {
+    background-color: #B3DEF7;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-container {
+    background-color: #ffffff;
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2.5%/5%;
+    height: 75%;
+    width: 55%;
+    overflow: hidden;
+    box-shadow: 5px 10px 18px #888888
+};
+
+/* don't touch, it works */
+.mm-settings-container {
+    background-color: #EDF2F7;
+}
+
+.split-mm {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+}
+
+.right-mm {
+    right: 0;
+    background-color: #EDF2F7;
+}
+
+.userdata-container {
+    margin: 40% 15% 0 15%;
+}
+
+.prof-pic {
+    height: 80px;
+    width: 80px;
+    background-color: #C4C4C4;
+    margin: 0 1.5rem 1.5rem 0;
+    border-radius: 50%;
+}
+
+.userdata-inner {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.userdata-right-from-pic {
+    display: flex;
+    flex-direction: column;
+}
+
+.username {
+    font-size: 20px;
+    background-color: #D5DCE3;
+    margin: 0 0 0.5rem 0;
+}
+
+.rep {
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+.rep-count {
+    color: #8B3DD4;
+}
+
+.bio {
+    color: #2B3036;
+    background-color: #D5DCE3;
+    font-size: 18px;
+    padding: 15px
+}
+
+.logout-button-container {
+    margin: 22% 0 0 75%;
+}
+
+.mm-inner {
+    margin: 40% 0 0 15%;
+    width: 17rem;
+    color: #2B3036;
+    text-align: center;
+    font-size: 17px;
+}
+
+.topic-selection {
+    width: 100%; 
+}
+
+.search-input {
+    background-color: #AAB6C1;
+    border: none;
+    height: 2rem;
+    width: 98.5%;
+}
+
+.search-input::placeholder {
+    color: white;
+    font-size: 17px;
+    padding: 0 0 0 10px;
+}
+.search-input:focus::placeholder {
+    outline: none;
+    color: #AAB6C1
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.topics {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    height: 7rem;
+    background-color: #D5DCE3;
+    margin: 0 0 1rem 0;
+}
+
+.topic {
+    background-color: #D5DCE3;
+    border: none;
+    color: #5E6975;
+    text-align: start;
+    padding: 10px 0 10px 5px;
+}
+
+.topic:focus {
+    outline: none;
+    background: rgb(199, 206, 212);
+}
+
+.search-button {
+    width: 100%
+}
+
+.topics::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+.topics::-webkit-scrollbar-track {
+background: #D5DCE3; 
+}
+
+/* Handle */
+.topics::-webkit-scrollbar-thumb {
+background: rgb(142, 152, 161); 
+}
+
+/* Handle on hover */
+.topics::-webkit-scrollbar-thumb:hover {
+background: rgb(123, 132, 139); 
+}   
+
+
+/*-------------------room---------------------*/
+
+.room-members {
+    height: 100%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    left: 0;
+    background-color: #D5DCE3;
+}
+
+.members-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    background-color: #9FB1C4;
+    padding: 0.5rem 2rem;
+    padding-left: 0.5rem;
+    color: white;
+    display: flex;
+    justify-content: row;
+    margin: 0 0 0.5rem 0;
+    font-size: 20px;
+}
+
+.title-text {
+    margin: 10px 0;
+}
+
+.member {
+    display: flex;
+    justify-content: row;
+    background-color: white;
+    margin: 20px;
+}
+
+.flexx {
+    display: flex;
+    flex-direction: row;
+}
+
+.member-pic {
+    height: 35px;
+    width: 35px;
+    background-color: #C4C4C4;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.member-username {
+    margin: 5px 0 5px 20px;
+}
+
+.messenger {
+    height: 100%;
+    width: 70%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    right: 0;
+}
+
+.messages {
+    /* i don't know how the f it is suppose to work, but it does the job */
+    margin-bottom: 45rem;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li{
+    display:inline-block;
+    clear: both;
+    padding: 15px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .msg-not-me{
+    background: #EDF2F7;
+    float: left;
+    margin-left: 10px;
+    color: rgb(45, 50, 56);
+  }
+  
+  .msg-me{
+    float: right;
+    background: #EDF2F7;
+    color: rgb(45, 50, 56);
+    margin-right: 10px;
+  }
+
+  .msg-not-me:hover {
+      background-color: rgb(227, 232, 236);
+  }
+  .msg-me:hover {
+    background-color: rgb(227, 232, 236);
+  }
+  
+  .msg-not-me + .msg-me{
+    border-bottom-right-radius: 5px;
+  }
+  
+  .msg-me:last-of-type {
+    border-bottom-right-radius: 30px;
+  }
+
+.msg-sender-username {
+    color: #548CC7;
+}
+
+.msg-form {
+    bottom: 0;
+    width: 70%;
+    white-space: nowrap;
+    position: fixed;
+} 
+
+.msg-input {
+    width: 80%;
+    height: 2.5rem;
+    background-color: #EDF2F7;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: rgb(45, 50, 56);
+}
+
+.msg-input::placeholder {
+    color: #5E6975;
+    font-size: 20px;
+    padding: 0 0 0 10px;
+}
+
+.msg-input:focus {
+    padding: 0 0 0 10px;
+}
+.msg-input:focus::placeholder {
+    outline: none;
+    color: #EDF2F7;
+}
+
+.msg-send {
+    width: 20%;
+    height: 2.65rem;
+    border: none;
+    background-color: #74D69D;
+    color: white;
+    font-size: 20px;
+    bottom: 0;
+    outline: none;
+}
+
+.msg-send:active {
+    outline: none;
+    border: none;
+    background-color: rgb(161, 219, 185)
+}
+
+.msg-send:hover {
+    background-color: rgb(161, 219, 185)
+}
+
+.empty-msgs {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 20px;
+    color: #5E6975;
+}
+
+
+
+.rate-users-container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2.5%/5%;
+    width: 20rem;
+}
+
+.rate-title {
+    margin: 1rem;
+    text-align: center;
+    font-size: 20px;
+    color: #5E6975;
+}
+
+.rating {
+
+}
+
+.user-to-rate {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+    justify-content: space-between
+}
+
+.user-data-rate {
+    display: flex;
+    flex-direction: row;
+}
+
+.rate-buttons-container {
+
+}
