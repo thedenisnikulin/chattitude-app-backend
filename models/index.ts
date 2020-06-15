@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 import { IUser, UserModelStatic, getUser } from './UserModel';
 import { IRoom, RoomModelStatic, getRoom } from './RoomModel';
 import { IChatMessage, ChatMessageModelStatic, getChatMessage } from './ChatMessageModel';
-import { DB, DB_USERNAME, DB_PASSWORD, DB_HOST } from "../config";
+import { DATABASE_URL} from "../config";
 
 // ModelStatic provides a control logic for the model
 // IModel provides an interface to model's instance
@@ -15,10 +15,7 @@ interface IDatabase {
 };
 
 const sequelize = new Sequelize(
-    DB, 
-    DB_USERNAME, 
-    DB_PASSWORD, {
-      host: DB_HOST,
+    DATABASE_URL!, {
       dialect: 'postgres',
       pool: {
         max: 9,

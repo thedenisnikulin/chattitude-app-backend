@@ -7,7 +7,6 @@ const ChatMessageModel_1 = require("./ChatMessageModel");
 const config_1 = require("../config");
 ;
 const sequelize = new sequelize_1.Sequelize(config_1.DB, config_1.DB_USERNAME, config_1.DB_PASSWORD, {
-    host: config_1.DB_HOST,
     dialect: 'postgres',
     pool: {
         max: 9,
