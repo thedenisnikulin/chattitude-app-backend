@@ -14,6 +14,8 @@ interface IDatabase {
     ChatMessage: ChatMessageModelStatic
 };
 
+console.log("DATABAAAAAAAAASEEEEE " + DATABASE_URL)
+
 const sequelize = new Sequelize(
     DATABASE_URL!, {
       dialect: 'postgres',
