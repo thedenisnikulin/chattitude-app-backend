@@ -6,7 +6,8 @@ const RoomModel_1 = require("./RoomModel");
 const ChatMessageModel_1 = require("./ChatMessageModel");
 const config_1 = require("../config");
 ;
-const sequelize = new sequelize_1.Sequelize(config_1.DB, config_1.DB_USERNAME, config_1.DB_PASSWORD, {
+console.log("DATABAAAAAAAAASEEEEE " + config_1.DATABASE_URL);
+const sequelize = new sequelize_1.Sequelize(config_1.DATABASE_URL, {
     dialect: 'postgres',
     pool: {
         max: 9,
