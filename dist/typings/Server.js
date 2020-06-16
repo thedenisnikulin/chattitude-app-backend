@@ -41,7 +41,7 @@ class Server {
     ;
     renderClient() {
         this.app.get('/*', (req, res) => {
-            res.sendFile(path_1.default.join(__dirname, '../../build/', 'index.html'));
+            res.sendFile(path_1.default.join(__dirname, '../../../build/', 'index.html'));
         });
     }
     initDatabase() {
