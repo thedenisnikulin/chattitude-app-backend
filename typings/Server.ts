@@ -36,7 +36,7 @@ export default class Server {
 
     public renderClient(): void {
         this.app.get('/*', (req: Request, res: Response) => {
-            res.sendFile(path.join(__dirname, '../../../build/', 'index.html'));
+            res.sendFile(path.join(__dirname, '../build/', 'index.html'));
         })
     }
 
