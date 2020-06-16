@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/app.js",
-    "build": "./node_modules/typescript/bin/tsc",
+    "build": "tsc",
     "postinstall": "npm run build"
   },
   "keywords": [],
@@ -21,7 +21,8 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.8",
     "sequelize-cli": "^5.5.1",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.3.0",
+    "ts-node": "^8.10.2"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
