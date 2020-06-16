@@ -43,6 +43,7 @@ export default class ChatServer {
                                     id: usersInRoom[i].username,
                                     username: usersInRoom[i].username,
                                     bio: usersInRoom[i].bio,
+                                    rep: usersInRoom[i].rep,
                                     roomId: usersInRoom[i].roomId
                                 }
                             });

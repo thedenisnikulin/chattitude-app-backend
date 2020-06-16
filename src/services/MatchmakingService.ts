@@ -93,6 +93,7 @@ export default class Matchmaking {
                     id: user.id,
                     username: user.username,
                     bio: user.bio,
+                    rep: user.rep,
                     roomId: user.roomId || null
                 });
             });

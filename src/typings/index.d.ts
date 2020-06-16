@@ -10,6 +10,7 @@ export interface ISafeUser {
     id: string;
     username: string;
     bio: string;
+    rep: number;
     roomId: string | null;
 }
 
