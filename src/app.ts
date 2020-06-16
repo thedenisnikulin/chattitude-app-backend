@@ -31,7 +31,7 @@ const globalMiddleware: Array<RequestHandler> = [
     urlencoded({ extended: false }),
     json(),
     cors({ credentials: true, origin: true }),
-    express.static(path.join(__dirname, 'build'))
+    express.static(path.join(__dirname, '../client/build'))
 ];
 
 Promise.resolve()
