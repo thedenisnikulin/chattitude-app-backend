@@ -3,6 +3,7 @@ import jwt from 'jsonwebtoken';
 import db from '../models/index'
 import { ISafeData } from '../typings/index';
 import { IUser } from '../models/UserModel';
+import { ACCESS_TOKEN_SECRET } from '../config'
 
 interface AuthReturnData {
     message: string;
@@ -64,7 +65,7 @@ export default class UserService {
     private prepareData(user: IUser): ISafeData {
         const token = jwt.sign(
             { user },
-            'process.env.ACCESS_TOKEN_SECRET',
+            ACCESS_TOKEN_SECRET,
             { expiresIn: '30d' }
         );
         const data: ISafeData = {
