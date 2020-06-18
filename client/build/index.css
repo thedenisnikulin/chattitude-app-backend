@@ -68,9 +68,6 @@ body {
     font-size: 35px;
 }
 
-.app-title {
-
-}
 
 .home-buttons {
     display: table;
@@ -89,7 +86,7 @@ body {
 
 .auth-title {
     text-align: center;
-    margin-top: 7rem;
+    margin-top: 10rem;
     margin-bottom: 0;
     font-size: 30px;
     font-weight: 900;
@@ -123,7 +120,6 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    padding: 10rem;
     width: 20rem
 }
 
