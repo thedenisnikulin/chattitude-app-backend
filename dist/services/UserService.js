@@ -34,6 +34,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const bcrypt = __importStar(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const index_1 = __importDefault(require("../models/index"));
+const config_1 = require("../config");
 class UserService {
     constructor(username, password, bio) {
         this.username = username;
@@ -96,7 +97,7 @@ class UserService {
     }
     ;
     prepareData(user) {
-        const token = jsonwebtoken_1.default.sign({ user }, 'process.env.ACCESS_TOKEN_SECRET', { expiresIn: '30d' });
+        const token = jsonwebtoken_1.default.sign({ user }, config_1.ACCESS_TOKEN_SECRET, { expiresIn: '30d' });
         const data = {
             user: {
                 id: user.id,

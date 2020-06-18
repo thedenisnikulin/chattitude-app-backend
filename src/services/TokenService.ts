@@ -1,6 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 import { ISafeUser } from '../typings/index';
+import { ACCESS_TOKEN_SECRET } from '../config'
 
 export default class Token {
     public static verify(req: Request, res: Response, next: NextFunction): void {
@@ -12,7 +13,7 @@ export default class Token {
         } else {
             const token = header.split(' ')[1];
             // console.log('tokenService token: ' + token);
-            jwt.verify(token, 'process.env.ACCESS_TOKEN_SECRET', (err, decodedFromToken) => {
+            jwt.verify(token, ACCESS_TOKEN_SECRET, (err, decodedFromToken) => {
                 if (err) {
                     res.json({data: {tokenVerificationData: { access: false, message: 'Failed to verify token' }}});
                     return;

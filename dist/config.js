@@ -19,12 +19,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DATABASE_URL = exports.PORT = void 0;
+exports.ACCESS_TOKEN_SECRET = exports.DATABASE_URL = exports.PORT = void 0;
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 exports.PORT = parseInt(process.env.PORT);
 exports.DATABASE_URL = process.env.DATABASE_URL;
-// export const DB = process.env.DB!;
-// export const DB_USERNAME = process.env.DB_USERNAME!;
-// export const DB_PASSWORD = process.env.DB_PASSWORD!;
-// export const DB_HOST = process.env.DB_HOST!;
+exports.ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;

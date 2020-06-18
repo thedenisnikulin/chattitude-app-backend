@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const config_1 = require("../config");
 class Token {
     static verify(req, res, next) {
         const header = req.headers.authorization;
@@ -15,7 +16,7 @@ class Token {
         else {
             const token = header.split(' ')[1];
             // console.log('tokenService token: ' + token);
-            jsonwebtoken_1.default.verify(token, 'process.env.ACCESS_TOKEN_SECRET', (err, decodedFromToken) => {
+            jsonwebtoken_1.default.verify(token, config_1.ACCESS_TOKEN_SECRET, (err, decodedFromToken) => {
                 if (err) {
                     res.json({ data: { tokenVerificationData: { access: false, message: 'Failed to verify token' } } });
                     return;
