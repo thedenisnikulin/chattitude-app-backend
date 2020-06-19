@@ -1,4 +1,4 @@
-# Backend of [Chattitude](https://chattitude.herokuapp.com)
+# [Chattitude](https://chattitude.herokuapp.com) backend
 > This is a well structured Typescript version of [old Chattitude](https://github.com/thedenisnikulin/chattitude-app-old)
 
 > Also, check out the [frontend](https://github.com/thedenisnikulin/chattitude-app-frontend) of the app.
