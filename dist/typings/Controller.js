@@ -22,16 +22,16 @@ class Controller {
                 ;
                 switch (route.method) {
                     case 'GET':
-                        this.router.get(route.path, route.controller);
+                        this.router.get(route.path, route.handler);
                         break;
                     case 'POST':
-                        this.router.post(route.path, route.controller);
+                        this.router.post(route.path, route.handler);
                         break;
                     case 'PUT':
-                        this.router.put(route.path, route.controller);
+                        this.router.put(route.path, route.handler);
                         break;
                     case 'DELETE':
-                        this.router.delete(route.path, route.controller);
+                        this.router.delete(route.path, route.handler);
                         break;
                     default:
                         console.log('not a valid method');

@@ -31,25 +31,25 @@ class MatchmakingController extends Controller_1.default {
             {
                 path: '/find-room',
                 method: Controller_1.Methods.POST,
-                controller: this.handleFindRoom,
+                handler: this.handleFindRoom,
                 localMiddleware: [TokenService_1.default.verify]
             },
             {
                 path: '/confirm-room-readiness',
                 method: Controller_1.Methods.POST,
-                controller: this.handleConfirmRoomReadiness,
+                handler: this.handleConfirmRoomReadiness,
                 localMiddleware: [TokenService_1.default.verify]
             },
             {
                 path: '/get-users-searching',
                 method: Controller_1.Methods.GET,
-                controller: this.handleGetUsersSearching,
+                handler: this.handleGetUsersSearching,
                 localMiddleware: [TokenService_1.default.verify]
             },
             {
                 path: '/break-search',
                 method: Controller_1.Methods.POST,
-                controller: this.handleBreakSearch,
+                handler: this.handleBreakSearch,
                 localMiddleware: [TokenService_1.default.verify]
             }
         ];

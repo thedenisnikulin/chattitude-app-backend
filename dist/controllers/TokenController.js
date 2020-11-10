@@ -20,7 +20,7 @@ class TokenController extends Controller_1.default {
             {
                 path: '/token',
                 method: Controller_1.Methods.POST,
-                controller: this.getToken,
+                handler: this.getToken,
                 localMiddleware: [TokenService_1.default.verify]
             }
         ];

@@ -8,7 +8,7 @@ export default class TokenController extends Controller {
         {
             path: '/token',
             method: Methods.POST,
-            controller: this.getToken,
+            handler: this.getToken,
             localMiddleware: [Token.verify]
         }
     ];

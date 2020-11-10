@@ -8,13 +8,13 @@ export default class AuthController extends Controller {
         {
             path: '/login',
             method: Methods.POST,
-            controller: this.handleLogin,
+            handler: this.handleLogin,
             localMiddleware: []
         },
         {
             path: '/register',
             method: Methods.POST,
-            controller: this.handleRegister,
+            handler: this.handleRegister,
             localMiddleware: []
         }
     ];

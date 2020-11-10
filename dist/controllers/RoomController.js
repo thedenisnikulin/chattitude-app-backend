@@ -30,7 +30,7 @@ class RoomController extends Controller_1.default {
             {
                 path: '/add-rep',
                 method: Controller_1.Methods.POST,
-                controller: this.handleAddRep,
+                handler: this.handleAddRep,
                 localMiddleware: [TokenService_1.default.verify]
             }
         ];

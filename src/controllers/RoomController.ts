@@ -9,7 +9,7 @@ export default class RoomController extends Controller {
         {
             path: '/add-rep',
             method: Methods.POST,
-            controller: this.handleAddRep,
+            handler: this.handleAddRep,
             localMiddleware: [Token.verify]
         }
     ];

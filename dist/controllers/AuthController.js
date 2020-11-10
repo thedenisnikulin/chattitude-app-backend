@@ -29,13 +29,13 @@ class AuthController extends Controller_1.default {
             {
                 path: '/login',
                 method: Controller_1.Methods.POST,
-                controller: this.handleLogin,
+                handler: this.handleLogin,
                 localMiddleware: []
             },
             {
                 path: '/register',
                 method: Controller_1.Methods.POST,
-                controller: this.handleRegister,
+                handler: this.handleRegister,
                 localMiddleware: []
             }
         ];

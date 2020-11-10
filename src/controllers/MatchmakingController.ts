@@ -11,25 +11,25 @@ export default class MatchmakingController extends Controller {
         {
             path: '/find-room',
             method: Methods.POST,
-            controller: this.handleFindRoom,
+            handler: this.handleFindRoom,
             localMiddleware: [Token.verify]
         },
         {
             path: '/confirm-room-readiness',
             method: Methods.POST,
-            controller: this.handleConfirmRoomReadiness,
+            handler: this.handleConfirmRoomReadiness,
             localMiddleware: [Token.verify]
         },
         {
             path: '/get-users-searching',
             method: Methods.GET,
-            controller: this.handleGetUsersSearching,
+            handler: this.handleGetUsersSearching,
             localMiddleware: [Token.verify]
         },
         {
             path: '/break-search',
             method: Methods.POST,
-            controller: this.handleBreakSearch,
+            handler: this.handleBreakSearch,
             localMiddleware: [Token.verify]
         }
     ];
