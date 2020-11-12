@@ -29,7 +29,6 @@ export default class AuthController extends Controller {
             const userService = new UserService(username, password);
             const data = await userService.login();
             if (data.success) {
-                // "this" isn't working here, so I use "super"
                 super.sendSuccess(res, data.data!, data.message);
             } else {
                 super.sendError(res, data.message);

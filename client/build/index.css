@@ -68,6 +68,9 @@ body {
     font-size: 35px;
 }
 
+.app-title {
+
+}
 
 .home-buttons {
     display: table;
@@ -86,7 +89,7 @@ body {
 
 .auth-title {
     text-align: center;
-    margin-top: 10rem;
+    margin-top: 7rem;
     margin-bottom: 0;
     font-size: 30px;
     font-weight: 900;
@@ -120,6 +123,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    padding: 10rem;
     width: 20rem
 }
 
@@ -184,7 +188,7 @@ body {
 }
 
 .userdata-container {
-    margin: 30% 15% 0 15%;
+    margin: 40% 15% 0 15%;
 }
 
 .prof-pic {
@@ -233,7 +237,7 @@ body {
 }
 
 .mm-inner {
-    margin: 30% 0 0 15%;
+    margin: 40% 0 0 15%;
     width: 17rem;
     color: #2B3036;
     text-align: center;

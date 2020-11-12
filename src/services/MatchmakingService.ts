@@ -58,7 +58,6 @@ export default class Matchmaking {
                 Promise.reject();
                 return false;
             }
-            console.log('----START CREATION----')
             let updatedRoomUsers = room.users.push(this.user);
             await db.Room.update({
                     topic: this.roomTopic,
@@ -78,7 +77,6 @@ export default class Matchmaking {
             where: { id: this.user.roomId },
             include: [{ model: db.User }]
         });
-        console.log(room)
         if (!room) {
             console.log('rejected')
             Promise.reject();

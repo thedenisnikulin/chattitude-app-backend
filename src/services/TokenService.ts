@@ -6,7 +6,6 @@ import { ACCESS_TOKEN_SECRET } from '../config'
 export default class Token {
     public static verify(req: Request, res: Response, next: NextFunction): void {
         const header = req.headers.authorization;
-        console.log("header: " + header)
         if (!header) {
             res.json({data: {tokenVerificationData:{ access: false, message: 'No token provided' }}});
             return;

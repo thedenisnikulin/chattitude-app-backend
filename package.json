@@ -7,7 +7,8 @@
     "start": "node dist/app.js",
     "build": "tsc",
     "postinstall": "npm run build",
-    "build-all": "rm -r -f client/build && cd .. && cd oqh-master/client && npm run build && cp -a build C:/Users/Public/Code/nodejs/oqh-typescript-master/client && cd C:/Users/Public/Code/nodejs/oqh-typescript-master && npm start"
+    "build-client": "cd ../chattitude-app-frontend/ && npm run build && cp -r build ../chattitude-app-backend/client",
+    "buildall": "npm run build && npm run build-client"
   },
   "keywords": [],
   "author": "",

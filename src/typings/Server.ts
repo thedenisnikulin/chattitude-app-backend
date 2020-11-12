@@ -29,7 +29,6 @@ export default class Server {
 
     public loadControllers(controllers: Array<Controller>): void {
         controllers.forEach(controller => {
-            console.log('c inited')
             this.app.use(controller.path, controller.setRoutes());
         });
     };
