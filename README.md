@@ -11,3 +11,5 @@
 * chat is built with **socket io**
 
 I did my best to add as much OOP stuff as possible in this project, so I ended up with a pretty organized code structure.
+
+Also, check out this: https://github.com/thedenisnikulin/sample-authentication-aspnetcore
