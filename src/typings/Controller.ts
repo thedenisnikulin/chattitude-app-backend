@@ -25,16 +25,16 @@ export default abstract class Controller {
                 this.router.use(route.path, mw)
             };
             switch (route.method) {
-                case 'GET':
+                case Methods.GET:
                     this.router.get(route.path, route.handler);
                     break;
-                case 'POST':
+                case Methods.POST:
                     this.router.post(route.path, route.handler);
                     break;
-                case 'PUT':
+                case Methods.PUT:
                     this.router.put(route.path, route.handler);
                     break;
-                case 'DELETE':
+                case Methods.DELETE:
                     this.router.delete(route.path, route.handler);
                     break;
                 default:
