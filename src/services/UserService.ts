@@ -1,9 +1,9 @@
 import * as bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import db from '../models/index'
+import db from '../models/index';
 import { ISafeData } from '../typings/index';
 import { IUser } from '../models/UserModel';
-import { ACCESS_TOKEN_SECRET } from '../config'
+import { ACCESS_TOKEN_SECRET } from '../config';
 
 interface AuthReturnData {
     message: string;
@@ -20,30 +20,41 @@ export default class UserService {
 
     public async login(): Promise<AuthReturnData> {
         try {
-            const userFromDb = await db.User.findOne({ where: { username: this.username } });
+            const userFromDb = await db.User.findOne({
+                where: { username: this.username },
+            });
             if (userFromDb) {
-                console.log('password: ' + this.password)
-                const isPasswordEqual = await bcrypt.compare(this.password, userFromDb.password);
-                console.log('password from db: ' + userFromDb.password)
+                console.log('password: ' + this.password);
+                const isPasswordEqual = await bcrypt.compare(
+                    this.password,
+                    userFromDb.password
+                );
+                console.log('password from db: ' + userFromDb.password);
                 if (isPasswordEqual) {
                     const data = this.prepareData(userFromDb);
-                    return({ message: 'Successfully logged in', success: true, data: data })
+                    return {
+                        message: 'Successfully logged in',
+                        success: true,
+                        data: data,
+                    };
                 } else {
-                    return({ message: 'Invalid password', success: false });
-                };
+                    return { message: 'Invalid password', success: false };
+                }
             } else {
-                return({ message: 'No such user', success: false });
+                return { message: 'No such user', success: false };
             }
-        } catch(e) {
+        } catch (e) {
             console.log(e);
-            return({ message: 'An error occured', success: false });
+            return { message: 'An error occured', success: false };
         }
-    };
+    }
 
     public async register(): Promise<AuthReturnData> {
-        if (!this.bio) return({ message: 'No bio provided', success: false });
+        if (!this.bio) return { message: 'No bio provided', success: false };
         try {
-            const userFromDb = await db.User.findOne({ where: { username: this.username } });
+            const userFromDb = await db.User.findOne({
+                where: { username: this.username },
+            });
             if (!userFromDb) {
                 const hashedPassword = await bcrypt.hash(this.password, 10);
                 const createdUser = await db.User.create({
@@ -52,22 +63,24 @@ export default class UserService {
                     bio: this.bio,
                 });
                 const data = this.prepareData(createdUser);
-                return({ message: 'Successfully registered', success: true, data: data })
+                return {
+                    message: 'Successfully registered',
+                    success: true,
+                    data: data,
+                };
             } else {
-                return({ message: 'User already exists', success: false });
+                return { message: 'User already exists', success: false };
             }
         } catch (e) {
             console.log(e);
-            return({ message: 'An error occured', success: false });
+            return { message: 'An error occured', success: false };
         }
-    };
+    }
 
     private prepareData(user: IUser): ISafeData {
-        const token = jwt.sign(
-            { user },
-            ACCESS_TOKEN_SECRET,
-            { expiresIn: '30d' }
-        );
+        const token = jwt.sign({ user }, ACCESS_TOKEN_SECRET, {
+            expiresIn: '30d',
+        });
         const data: ISafeData = {
             user: {
                 id: user.id,
@@ -76,9 +89,9 @@ export default class UserService {
                 rep: user.rep,
                 roomId: user.roomId,
             },
-            jwt: token
+            jwt: token,
         };
-        console.log(token)
+        console.log(token);
         return data;
     }
 }

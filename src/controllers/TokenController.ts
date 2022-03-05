@@ -9,13 +9,15 @@ export default class TokenController extends Controller {
             path: '/token',
             method: Methods.POST,
             handler: this.getToken,
-            localMiddleware: [Token.verify]
-        }
+            localMiddleware: [Token.verify],
+        },
     ];
 
     getToken(req: Request, res: Response, next: NextFunction): void {
         if (req.verifiedUser) {
-            super.sendSuccess(res, {tokenVerificationData:{ access: true, user: req.verifiedUser }})
-        };
+            super.sendSuccess(res, {
+                tokenVerificationData: { access: true, user: req.verifiedUser },
+            });
+        }
     }
 }
