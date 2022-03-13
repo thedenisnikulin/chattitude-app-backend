@@ -1,10 +1,10 @@
 import { Response, Request, NextFunction, Router } from 'express';
 
 export enum Methods {
-    GET = 'GET',
-    POST = 'POST',
-    PUT = 'PUT',
-    DELETE = 'DELETE',
+    GET = 'get',
+    POST = 'post',
+    PUT = 'put',
+    DELETE = 'delete',
 }
 
 interface IRoute {
@@ -32,22 +32,10 @@ export default abstract class Controller {
             for (const mw of route.localMiddleware) {
                 this.router.use(route.path, mw);
             }
-            switch (route.method) {
-                case Methods.GET:
-                    this.router.get(route.path, route.handler);
-                    break;
-                case Methods.POST:
-                    this.router.post(route.path, route.handler);
-                    break;
-                case Methods.PUT:
-                    this.router.put(route.path, route.handler);
-                    break;
-                case Methods.DELETE:
-                    this.router.delete(route.path, route.handler);
-                    break;
-                default:
-                    console.log('not a valid method');
-                    break;
+            try {
+                this.router[route.method](route.path, route.handler);
+            } catch (err) {
+                console.error('not a valid method');
             }
         }
 
