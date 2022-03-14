@@ -13,32 +13,36 @@ export interface IChatMessage extends Model {
 
     readonly user: UserModelStatic;
     readonly room: RoomModelStatic;
-};
+}
 
 export type ChatMessageModelStatic = typeof Model & {
     new (values?: object, options?: BuildOptions): IChatMessage;
 };
 
-export function getChatMessage(sequelize: Sequelize): ChatMessageModelStatic { 
-    return <ChatMessageModelStatic>sequelize.define('chatMessage', {
-        id: {
-            type: DataTypes.UUID,
-            defaultValue: DataTypes.UUIDV4,
-            primaryKey: true,
+export function getChatMessage(sequelize: Sequelize): ChatMessageModelStatic {
+    return <ChatMessageModelStatic>sequelize.define(
+        'chatMessage',
+        {
+            id: {
+                type: DataTypes.UUID,
+                defaultValue: DataTypes.UUIDV4,
+                primaryKey: true,
+            },
+            message: {
+                type: DataTypes.STRING,
+                allowNull: false,
+            },
+            senderId: {
+                type: DataTypes.UUID,
+                allowNull: false,
+            },
+            roomId: {
+                type: DataTypes.UUID,
+                allowNull: false,
+            },
         },
-        message: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        senderId: {
-            type: DataTypes.UUID,
-            allowNull: false
-        },
-        roomId: {
-            type: DataTypes.UUID,
-            allowNull: false
+        {
+            freezeTableName: true,
         }
-    }, {
-        freezeTableName: true
-    })
-};
+    );
+}

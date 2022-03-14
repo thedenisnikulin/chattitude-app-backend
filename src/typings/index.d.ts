@@ -17,7 +17,7 @@ export interface ISafeUser {
 export interface ISafeRoom {
     id: string;
     topic: string;
-    users: Array<ISafeUser>
+    users: Array<ISafeUser>;
 }
 
 export interface ISafeChatMessage {
@@ -30,5 +30,5 @@ export interface ISafeData {
     user?: ISafeUser;
     room?: ISafeRoom;
     jwt?: string;
-    messages?: Array<ISafeChatMessage>
+    messages?: Array<ISafeChatMessage>;
 }

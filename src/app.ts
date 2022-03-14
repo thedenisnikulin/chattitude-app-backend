@@ -14,8 +14,8 @@ import RoomController from './controllers/RoomController';
 import { json, urlencoded } from 'body-parser';
 import cors from 'cors';
 // utils
-import { PORT } from "./config";
-import path from "path";
+import { PORT } from './config';
+import path from 'path';
 
 const app: Application = express();
 const server: Server = new Server(app, db.sequelize, PORT);
@@ -24,14 +24,14 @@ const controllers: Array<Controller> = [
     new AuthController(),
     new TokenController(),
     new MatchmakingController(),
-    new RoomController()
+    new RoomController(),
 ];
 
 const globalMiddleware: Array<RequestHandler> = [
     urlencoded({ extended: false }),
     json(),
     cors({ credentials: true, origin: true }),
-    express.static(path.join(__dirname, '../client/build'))
+    express.static(path.join(__dirname, '../client/build')),
 ];
 
 Promise.resolve()

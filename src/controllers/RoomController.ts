@@ -10,20 +10,26 @@ export default class RoomController extends Controller {
             path: '/add-rep',
             method: Methods.POST,
             handler: this.handleAddRep,
-            localMiddleware: [Token.verify]
-        }
+            localMiddleware: [Token.verify],
+        },
     ];
 
-    async handleAddRep(req: Request, res: Response, next: NextFunction): Promise<void> {
+    async handleAddRep(
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ): Promise<void> {
         try {
             const { valueToAdd, username } = req.body;
-            console.log(valueToAdd, username)
-            const user = await db.User.findOne({ where: {username: username} });
+            console.log(valueToAdd, username);
+            const user = await db.User.findOne({
+                where: { username: username },
+            });
             await db.User.update(
                 { rep: user!.rep + valueToAdd },
                 { where: { username: username } }
             );
-        } catch(e) {
+        } catch (e) {
             console.log(e);
             super.sendError(res);
         }

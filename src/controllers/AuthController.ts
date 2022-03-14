@@ -9,21 +9,25 @@ export default class AuthController extends Controller {
             path: '/login',
             method: Methods.POST,
             handler: this.handleLogin,
-            localMiddleware: []
+            localMiddleware: [],
         },
         {
             path: '/register',
             method: Methods.POST,
             handler: this.handleRegister,
-            localMiddleware: []
-        }
+            localMiddleware: [],
+        },
     ];
 
     constructor() {
         super();
-    };
+    }
 
-    async handleLogin(req: Request, res: Response, next: NextFunction): Promise<void> {
+    async handleLogin(
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ): Promise<void> {
         try {
             const { username, password } = req.body;
             const userService = new UserService(username, password);
@@ -33,13 +37,17 @@ export default class AuthController extends Controller {
             } else {
                 super.sendError(res, data.message);
             }
-        } catch(e) {
+        } catch (e) {
             console.log(e);
             super.sendError(res);
         }
-    };
+    }
 
-    async handleRegister(req: Request, res: Response, next: NextFunction): Promise<void> {
+    async handleRegister(
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ): Promise<void> {
         try {
             const { username, password, bio } = req.body;
             const userService = new UserService(username, password, bio);
@@ -48,10 +56,10 @@ export default class AuthController extends Controller {
                 super.sendSuccess(res, data.data!, data.message);
             } else {
                 super.sendError(res, data.message);
-            };
-        } catch(e) {
+            }
+        } catch (e) {
             console.log(e);
             super.sendError(res);
         }
-    };
+    }
 }
