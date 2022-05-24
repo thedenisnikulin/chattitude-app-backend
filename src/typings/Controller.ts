@@ -33,10 +33,11 @@ export default abstract class Controller {
 
     public setRoutes = (): Router => {
         for (const route of this.routes) {
-            for (const mw of route.localMiddleware) {
-                this.router.use(route.path, mw);
-            }
             try {
+                for (const mw of route.localMiddleware) {
+                    this.router[route.method](route.path, mw);
+                }
+
                 this.router[route.method](route.path, route.handler);
             } catch (err) {
                 console.error('not a valid method');
