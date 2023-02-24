@@ -21,7 +21,7 @@
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.1.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5.21.8",
+    "sequelize": "^6.29.0",
     "sequelize-cli": "^5.5.1",
     "socket.io": "^2.3.0",
     "typescript": "^3.9.5"
